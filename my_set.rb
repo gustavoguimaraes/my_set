@@ -1,12 +1,14 @@
-class MySet 
+class MySet
+
   attr_accessor :counter, :elements
+
   def initialize
     @counter = 0
     @elements = []
   end
 
   def empty?
-    if @counter == 0
+    if counter == 0
       true
     else
       false
@@ -15,19 +17,19 @@ class MySet
 
   def add(data)
     unless include?(data)
-      @elements[@counter] = data
-      @counter += 1
+      elements[counter] = data
+      self.counter = counter + 1
     else
       raise CannotAddSameData
     end
   end
 
   def size
-    @counter
+    counter
   end
 
   def include?(data)
-    @elements.each do |elem| 
+    elements.each do |elem|
       if elem == data
         return true
       end
