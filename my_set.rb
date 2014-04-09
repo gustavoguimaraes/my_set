@@ -19,6 +19,7 @@ class MySet
     unless include?(data)
       elements[counter] = data
       self.counter = counter + 1
+      elements
     else
       raise CannotAddSameData
     end
